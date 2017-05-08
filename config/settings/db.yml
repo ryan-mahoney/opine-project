@@ -1,0 +1,3 @@
+settings:
+    driver: sqlite
+    database: __ROOT__/../db/data/sqlite

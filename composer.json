@@ -1,0 +1,19 @@
+{
+  "name": "project",
+  "minimum-stability": "dev",
+  "require": {
+    "opine/api": "1.0.19",
+    "robmorgan/phinx": "0.8.0",
+    "pecee/pixie": "3.1.0"
+  },
+  "require-dev": {
+      "phpunit/phpunit": "6.1.0",
+      "guzzlehttp/guzzle": "~6.0"
+  },
+  "autoload": {
+    "classmap": [
+      "controllers",
+      "models"
+    ]
+  }
+}

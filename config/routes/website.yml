@@ -1,0 +1,7 @@
+route:
+    GET:
+        /:                                          contacts@helloWorld
+        /add:                                       contacts@add
+        /edit:                                      contacts@edit
+        /all:                                       contacts@all
+        /email:                                     contacts@findByEmail

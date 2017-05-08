@@ -1,0 +1,21 @@
+imports:
+    - ../../vendor/opine/api/config/containers/container.yml
+
+services:
+    db_conn:
+        class: \Pecee\Pixie\Connection
+        arguments:
+            - sqlite
+            - config.db
+    db:
+        class: \Pecee\Pixie\QueryBuilder\QueryBuilderHandler
+        arguments:
+            - "@db_conn"
+    contacts:
+        class: ContactsController
+        arguments:
+            - "@contactsModel"
+    contactsModel:
+        class: ContactsModel
+        arguments:
+            - "@db"
