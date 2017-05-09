@@ -11,6 +11,10 @@ services:
         class: \Pecee\Pixie\QueryBuilder\QueryBuilderHandler
         arguments:
             - "@db_conn"
+    documentation:
+        class: DocumentationController
+        arguments:
+            - %root%
     contacts:
         class: ContactsController
         arguments:

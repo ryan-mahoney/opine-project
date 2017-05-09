@@ -1,4 +1,4 @@
 /vendor
-/var
+/var/cache
 /composer.lock
 /db/data/sqlite

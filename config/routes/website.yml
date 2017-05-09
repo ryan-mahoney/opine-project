@@ -1,6 +1,5 @@
 route:
     GET:
-        /:                                          contacts@index
         /api/contact/list:                          contacts@list
         /api/contact/view/{id}:                     contacts@view
         /api/contact/find/email:                    contacts@findByEmail
