@@ -1,7 +1,10 @@
 route:
     GET:
-        /:                                          contacts@helloWorld
-        /add:                                       contacts@add
-        /edit:                                      contacts@edit
-        /all:                                       contacts@all
-        /email:                                     contacts@findByEmail
+        /:                                          contacts@index
+        /api/contact/list:                          contacts@list
+        /api/contact/view/{id}:                     contacts@view
+        /api/contact/find/email:                    contacts@findByEmail
+    POST:
+        /api/contact/add:                           contacts@add
+        /api/contact/update/{id}:                   contacts@update
+        /api/contact/delete/{id}:                   contacts@delete

@@ -7,7 +7,7 @@ class ContactsController {
         $this->model = $model;
     }
 
-    public function helloWorld ()
+    public function index ()
     {
         echo 'Hello World';
     }

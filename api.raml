@@ -1,0 +1,75 @@
+#%RAML 1.0
+title: Contact API
+version: v1
+baseUri: http://localhost
+types:
+  Contact:
+    type: object
+    properties:
+      id: number
+      name: string
+      phone: string
+      email: string
+/api:
+    /contact:
+        /list:
+          get:
+            description: List available contacts
+            queryParameters:
+              page:
+                description: Specify the page that you want to retrieve
+                type:        integer
+                required:    true
+                example:     1
+            responses:
+              200:
+                body:
+                  application/json:
+                    example: |
+                      {
+                        "status": "ok",
+                        "payload" : {
+                          "contacts": [
+                            Contact
+                          ]
+                        }
+                      }
+              500:
+                body:
+                  application/json:
+                    example: |
+                      {
+                        "status": "error"
+                        "error": "error message"
+                      }
+        /view/{id}:
+          get:
+            responses:
+              200:
+                body:
+                  application/json:
+                    example: |
+                      {
+                        "status": "ok",
+                        "payload": {
+                          "contact": Contact
+                        }
+                      }
+              404:
+                body:
+                  application/json:
+                    example: |
+                      {
+                        "status": "notice",
+                        "notice": "not found"
+                      }
+              500:
+                body:
+                  application/json:
+                    example: |
+                      {
+                        "status": "error"
+                        "error": "error message"
+                      }
+        /find:
+          /email:
